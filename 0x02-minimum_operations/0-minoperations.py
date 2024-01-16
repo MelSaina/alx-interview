@@ -4,14 +4,15 @@ def minOperations(n):
     '''
     min operations
     '''
-    if n <= 1:
+    if not isinstance(n, int):
         return 0
-    num, div, numOfOperations = n, 2, 0
 
-    while num > 1:
-        if num % div == 0:
-            num = num / div
-            numOfOperations = numOfOperations + div
-        else:
-            div += 1
-    return numOfOperations
+    operations = 0
+    iterator = 2
+    while (iterator <= n):
+        if not (n % iterator):
+            n = int(n / iterator)
+            operations += iterator
+            iterator = 1
+        iterator += 1
+    return operations
