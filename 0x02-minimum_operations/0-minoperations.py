@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 
 def minOperations(n):
+    '''
+    min operations
+    '''
     if n <= 1:
         return 0
+    num, div, numOfOperations = n, 2, 0
 
-    
-    dp = [float('inf')] * (n + 1)
-    dp[1] = 0
-
-    for i in range(2, n + 1):
-        for j in range(2, i + 1):
-            if i % j == 0:
-                dp[i] = min(dp[i], dp[j] + i // j)
-
-    return dp[n]
-
+    while num > 1:
+        if num % div == 0:
+            num = num / div
+            numOfOperations = numOfOperations + div
+        else:
+            div += 1
+    return numOfOperations
