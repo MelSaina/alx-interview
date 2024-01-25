@@ -1,12 +1,38 @@
 #!/usr/bin/python3
+"""
+Log stats module
+"""
 import sys
 
 def print_stats(total_size, status_codes):
+    
+    """
+    Print statistics based on the current total file size and status code counts.
+    Args:
+        total_size (int): The total file size.
+        status_codes (dict): Dictionary containing counts for each status code.
+    Returns:
+        None
+    """
+
+
+
     print("File size: {}".format(total_size))
     for code in sorted(status_codes):
         print("{}: {}".format(code, status_codes[code]))
 
 def parse_line(line, total_size, status_codes):
+    
+    """
+    Parse a line of input, update total file size and status code counts.
+    Args:
+        line (str): Input line to parse.
+        total_size (int): The current total file size.
+        status_codes (dict): Dictionary containing counts for each status code.
+    Returns:
+        tuple: Updated total_size and status_codes.
+    """
+
     split_line = line.split()
     if len(split_line) >= 9:
         try:
