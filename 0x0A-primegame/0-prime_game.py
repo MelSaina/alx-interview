@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+Defines a Prime game
+"""
 def isWinner(x, nums):
     """
     Evaluates the winner of a prime game session within x rounds of play
